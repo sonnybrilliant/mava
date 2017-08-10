@@ -42,6 +42,16 @@
         <mkdir dir="${basedir}/build/phpdox"/>
         <property name="prepare.done" value="true"/>
     </target>
+    <target name="composer" description="Installing composer dependencies">
+        <exec executable="composer" failonerror="true">
+            <arg value="install" />
+            <arg value="--dev" />
+            <arg value="--prefer-dist" />
+            <arg value="--no-progress" />
+
+            <env key="SYMFONY_ENV" value="test"/>
+        </exec>
+    </target>
     <target name="lint" unless="lint.done" description="Perform syntax check of sourcecode files">
         <apply executable="php" taskname="lint">
             <arg value="-l"/>
