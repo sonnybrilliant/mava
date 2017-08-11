@@ -45,7 +45,7 @@
     </target>
     <target name="composer" description="Installing composer dependencies">
         <exec executable="composer" failonerror="true">
-            <arg value="install" />
+            <arg value="update" />
         </exec>
     </target>
     <target name="lint" unless="lint.done" description="Perform syntax check of sourcecode files">
