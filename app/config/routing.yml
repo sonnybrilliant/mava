@@ -6,3 +6,4 @@ my:
 app:
     resource: '@AppBundle/Controller/'
     type: annotation
+
